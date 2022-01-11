@@ -1,7 +1,5 @@
 import java.util.*;
 import java.io.*;
-
-
 class ATM{
     
     public static final Scanner sc=new Scanner(System.in);
@@ -16,10 +14,8 @@ class ATM{
         } catch (IOException | InterruptedException ex) {}
         
     }
-
-    static int State = 1;
+    
     static ATM[] atm;
-    static int Current_User = 0;
 
     public String username,userpin;
     public int userbalance=0;
@@ -161,7 +157,7 @@ class ATM{
     
     public static int userpass(int p1,int p2,int p3){
         Boolean b=true;
-        int currentuser=0;
+        int currentuser=-1;
         for(int x=1;x<=3;x++){
             int a=1;
             // sc.nextLine();
@@ -218,16 +214,14 @@ public static void main(String args[]){
     System.out.println("Welcome to ATM");
 
     //Users
-    if (State == 1) {
-        atm = new ATM[3];
-        atm[0] = new ATM("raj", "1234", 5000);
-        atm[0].User_Statement = new ArrayList<>();
-        atm[1] = new ATM("rajesh", "1234", 6000);
-        atm[1].User_Statement = new ArrayList<>();
-        atm[2] = new ATM("ram", "1234", 3000);
-        atm[2].User_Statement = new ArrayList<>();
-        State = 0;
-    }
+    
+    atm = new ATM[3];
+    atm[0] = new ATM("raj", "1234", 5000);
+    atm[0].User_Statement = new ArrayList<>();
+    atm[1] = new ATM("rajesh", "1234", 6000);
+    atm[1].User_Statement = new ArrayList<>();
+    atm[2] = new ATM("ram", "1234", 3000);
+    atm[2].User_Statement = new ArrayList<>();
 
     while(true){
         System.out.println("_________________________");
@@ -318,9 +312,10 @@ public static void main(String args[]){
 
             if(b==true){
             // System.out.println(c);
+            clearConsole();
             System.out.println();
-            System.out.println("Welcome User");
-            System.out.println();
+            System.out.println("--- Welcome User ---");
+            System.out.println("\n Hello..."+atm[c].username+"\n");
             System.out.println("1.Withdraw Amount");
             System.out.println("2.Check account balance");
             System.out.println("3.Check ATM Balance");
@@ -367,10 +362,16 @@ public static void main(String args[]){
             }
             else if(o==4){
                 System.out.println("Mini Statement !");
-                for (int k = 0; k < atm[c].User_Statement.size(); k++) {
-                    System.out.println(atm[Current_User].User_Statement.get(k));
-                }
+                if(atm[c].User_Statement.size()>=1){
+                    for (int k = 0; k < atm[c].User_Statement.size(); k++) {
+                        System.out.println(atm[c].User_Statement.get(k));
+                    }
                 break;
+                }
+                else{
+                    System.out.println("\nThere is no transactions yet...");
+                    break;
+                }
             }
             else if(o==5){
                 System.out.print("Enter the Old Pin: ");
