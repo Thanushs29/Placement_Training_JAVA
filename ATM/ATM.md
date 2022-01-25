@@ -34,7 +34,7 @@ Note :-  You can perform only one operation at a time...
 
 Enter your choice :
 __________________________________________________________
-###### 1)=>
+**1)=>**
 
 Enter amount to deposit :
 
@@ -50,11 +50,11 @@ Enter 100 rupee notes :
 Rs : 56000-/
 Your money Deposited Successfully...
 __________________________________________________________
-###### 2)=>
+**2)=>**
 
 Currect ATM balance : Rs56000-/
 __________________________________________________________
-###### 3)=>
+**3)=>**
 
 Logut Successfull!!
 
@@ -94,7 +94,7 @@ NOTE:-  You can perform only one operation at a time
 Enter your choise
 
 __________________________________________________________________
-###### 1)=>
+**1)=>**
 
 Enter amount to withdraw : 2000
 
@@ -110,15 +110,15 @@ Your account balance : Rs :3000-/
 - - - - - - - -
 Please collect your cash
 ___________________________________________________________________
-###### 2)=>
+**2)=>**
 
 Rs : 3000-/
 ___________________________________________________________________
-###### 3)=>
+**3)=>**
 
 Current ATMbalance is 54000-/
 ___________________________________________________________________
-###### 4)=>
+**4)=>**
 
 Mini Statement !
 2022-01-25T15:50:37.342392500
@@ -126,13 +126,13 @@ Withdrawn Amount -3000
 Your account balance - 2000
 
 ___________________________________________________________________
-###### 5)=>
+**5)=>**
 
 Enter the Old Pin: 1234
 Enter new pin: 0000
 Pin has been changed Successfully !!!
 ____________________________________________________________________
-###### 6)=>
+**6)=>**
 
 Exit Successfully!!!
 
