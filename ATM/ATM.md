@@ -1,4 +1,4 @@
-#Welcome to ATM
+# Welcome to ATM
 _________________________
 Select your UserType...
 
@@ -10,7 +10,7 @@ Select your UserType...
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////////////////////////////////////////////////////////////
 
-#1) Admin =>
+# 1) Admin =>
 
 _____Login info______
 
@@ -34,11 +34,11 @@ Note :-  You can perform only one operation at a time...
 
 Enter your choice :
 __________________________________________________________
-##1)=>
+## 1)=>
 
 Enter amount to deposit :
 
-Enter 2000 rupee notes :\n
+Enter 2000 rupee notes :
 10				// input value
 Enter 500 rupee notes :
 10				//input value
@@ -50,7 +50,7 @@ Enter 100 rupee notes :
 Rs : 56000-/
 Your money Deposited Successfully...
 __________________________________________________________
-##2)=>
+2)=>
 
 Currect ATM balance : Rs56000-/
 __________________________________________________________
