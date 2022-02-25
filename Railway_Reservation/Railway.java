@@ -47,6 +47,7 @@ public class Train{
     public static List<List<Integer>>ta=new ArrayList<>();
     public static List<Waiting_list> wat = new ArrayList<>();
     public static List<User> users=new ArrayList<>();
+    public static List<Booking_history> book_his=new ArrayList<>();
 
     static String[] bh=new String[50];
     // public String uname,upass;
@@ -259,7 +260,8 @@ public class Train{
             System.out.println("1.Book ticket");
             System.out.println("2.Cancel Ticket");
             System.out.println("3.Booking History");
-            System.out.println("4.Exit");
+            System.out.println("4.View Seat availability");
+            System.out.println("5.Exit");
             int ch=sc.nextInt();
             if(ch==1){
                 System.out.println("Seats Availability\n");
@@ -269,9 +271,6 @@ public class Train{
                     }
                     System.out.println();
                 }
-
-
-
                 System.out.println("\n\nEnter start station number");
                 st=sc.nextInt();
                 st-=1;
@@ -290,8 +289,9 @@ public class Train{
                         fl=1;
                         System.out.println("Ticket Booked succesfully \nSno: "+(i+1)+" Ticket id: "+(cur_usr+1));
                         // bh[cur_usr+1]="SeatNo: "+Integer.toString(i+1)+" Ticket id: "+Integer.toString(cur_usr+1);
-                        String date = java.time.LocalDateTime.now() + "\nSno. -" +(i+1)+"Ticket ID : "+(cur_usr+1);
+                        String date = java.time.LocalDateTime.now() + "\nSno. -" +(i+1)+"\nTicket ID : "+(cur_usr+1);
                         bh[cur_usr]=date;
+                        book_his.add(new Booking_history(usr_name,date));
                         break;
                     }
                 }
@@ -316,26 +316,43 @@ public class Train{
                 }
                 bh[cur_usr+1]=bh[cur_usr+1]+" -->Cancelled";
                 System.out.println("Ticket cancelled Succesfully");
+                sc.nextLine();
+                sc.nextLine();
                 // tcancel();
 
             }
             else if(ch==3){
                 System.out.println("Your booking History");
                 // System.out.println(bh[cur_usr+1]);
-                for(int i=0;i<bh.length;i++){
-                    if(bh[i]!=null)
-                    System.out.print(bh[i]);
+                // for(int i=0;i<book_his.size();i++){
+                    for(Booking_history b:book_his){
+                        if(b.getUser_name().equals(usr_name)){
+                            System.out.println("\n"+b.getUser_name()+" -> "+b.getUser_data());
+                        }
+                    }
                     // break;
-                }
+                // }
                 sc.nextLine();
                 sc.nextLine();
             }
             else if(ch==4){
+                System.out.println("Seats Availability\n");
+                for(int i=0;i<r;i++){
+                    for(int j=0;j<c;j++){
+                        System.out.print( ta.get(i).get(j)+"  ");
+                    }
+                    System.out.println();
+                }
+                System.out.println("Press Enter to Continue...!");
+                sc.nextLine();
+                sc.nextLine();
+            }
+            else if(ch==5){
                 System.out.println("Exit successfully");
                 break;
             }
             else{
-                System.out.println("Invalid Input");
+                System.out.println("Invalid Input\n\nEnter to try Again....");
             }
         }
     }
@@ -392,5 +409,30 @@ class User{
     }
     public void setUsr_phone(String phone){
         this.usr_phone=usr_phone;
+    }
+}
+
+class Booking_history{
+    public String user_name,user_data;
+
+    public Booking_history(String user_name,String data){
+        this.user_name=user_name;
+        this.user_data=data;
+    }
+
+    public String getUser_name(){
+        return user_name;
+    }
+
+    public void setUser_name(String user_name){
+        this.user_name=user_name;
+    }
+
+    public String getUser_data(){
+        return user_data;
+    }
+
+    public void setUser_data(String user_data){
+        this.user_data=user_data;
     }
 }
